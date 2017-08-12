@@ -9,15 +9,19 @@ export default class App extends React.Component {
 
         this.state = {
             base: {
-                name: 'ZUSD',
+                name: 'USD',
                 value: 1
             },
             quotes: [
                 {
-                    name: 'XXBT'
+                    name: 'BTC'
                 },
                 {
-                    name: 'XETH'
+                    name: 'ETH'
+                }
+                ,
+                {
+                    name: 'BCH'
                 }
             ]
         }
@@ -31,8 +35,8 @@ export default class App extends React.Component {
         var copiedQuotes = this.state.quotes
 
         copiedQuotes.forEach((quote) => {
-            axios.get('https://api.kraken.com/0/public/Ticker?pair=' + quote.name + this.state.base.name).then((response) => {
-                quote.value = Number(response.data.result[quote.name + this.state.base.name].c[0]).toFixed(2)
+            axios.get('https://api.bitfinex.com/v2/tickers?symbols=t' + quote.name + this.state.base.name).then((response) => {
+                quote.value = Number(response.data[0][7]).toFixed(2)
 
                 this.setState({ ...this.state, quotes: copiedQuotes })
             })
