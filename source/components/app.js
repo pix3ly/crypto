@@ -8,9 +8,10 @@ export default class App extends React.Component {
 
         this.state = {
             base: {
-                currency: 'USD',
+                currency: 'ZUSD',
                 value: 1
-            }
+            },
+            quotes: ['XXBT', 'XETH']
         }
     }
 
@@ -21,7 +22,11 @@ export default class App extends React.Component {
                     <h1>{this.state.base.value}</h1>
                     {this.state.base.currency}
                 </div>
-                <Currency name="Test" value="300" />
+                {this.state.quotes.map((quote) => {
+                    return (
+                        <Currency name={quote} value="N/A" />
+                    )
+                })}
             </div>
         )
     }
