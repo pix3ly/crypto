@@ -43,12 +43,16 @@ export default class App extends React.Component {
         })
     }
 
+    updateBaseValue(e) {
+        this.setState({ ...this.state, base: { ...this.state.base, value: e.target.value } })
+    }
+
     render() {
         return (
             <div>
                 <div className="align-center">
                     <p className="label">{this.state.base.name}</p>
-                    <h1>{this.state.base.value}</h1>
+                    <input type="text" value={this.state.base.value} onChange={this.updateBaseValue.bind(this)} />
                 </div>
                 <div>
                     {this.state.quotes.map((quote) => {
