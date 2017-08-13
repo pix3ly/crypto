@@ -18,8 +18,7 @@ export default class App extends React.Component {
                 },
                 {
                     name: 'ETH'
-                }
-                ,
+                },
                 {
                     name: 'BCH'
                 }
