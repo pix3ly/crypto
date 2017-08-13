@@ -46,15 +46,17 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <div>
+                <div className="align-center">
+                    <p className="label">{this.state.base.name}</p>
                     <h1>{this.state.base.value}</h1>
-                    {this.state.base.name}
                 </div>
-                {this.state.quotes.map((quote) => {
-                    return (
-                        <Currency name={quote.name} value={quote.value} />
-                    )
-                })}
+                <div>
+                    {this.state.quotes.map((quote) => {
+                        return (
+                            <Currency name={quote.name} value={quote.value} />
+                        )
+                    })}
+                </div>
             </div>
         )
     }

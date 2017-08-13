@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, h1, h2 {
+    font-weight: 300;
+}
+
+body {
+    font-family: BlinkMacSystemFont;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+#app {
+    margin: 72px auto;
+    width: 90%;
+    max-width: 480px;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.card {
+    margin-top: 40px;
+    padding: 24px;
+    background: #333;
+    color: #FFF;
+    border-radius: 8px;
+}
+
+.label {
+    margin-bottom: 16px;
+}
